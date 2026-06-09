@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eaton Fire Wellness Resources | Altagether</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-paper: #FDFBF7;
+      --bg-card: #FFFFFF;
+      --brand-primary-dark: #314059;
+      --text-primary: #1F2937;
+      --text-secondary: #4B5563;
+      --accent-gold: #F59E0B;
+      --accent-clay: #BC5838;
+      --accent-green: #283618;
+      --border-color: #E5E7EB;
+      --paper-warm: #FEF3C7;
+      --cream: #FFF8E8;
+      --shadow: 4px 4px 0 var(--border-color);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: 'Merriweather', serif;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(245, 158, 11, 0.18), transparent 28rem),
+        radial-gradient(circle at 90% 6%, rgba(188, 88, 56, 0.13), transparent 22rem),
+        var(--bg-paper);
+      color: var(--text-primary);
+    }
+    h1, h2, h3, .eyebrow, .btn, .filter-chip, label, th {
+      font-family: 'Chivo', sans-serif;
+    }
+    a { color: var(--accent-green); }
+    .hidden { display: none !important; }
+
+    .header {
+      background: var(--brand-primary-dark);
+      color: white;
+      border-bottom: 3px solid var(--text-primary);
+    }
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 2px solid rgba(255,255,255,0.72);
+      border-radius: 50%;
+      color: var(--accent-gold);
+      font-family: 'Chivo', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      line-height: 1.15;
+    }
+    .source-link {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 999px;
+      padding: 0.45rem 0.75rem;
+      text-decoration: none;
+      font-size: 0.84rem;
+      white-space: nowrap;
+    }
+    .source-link:hover { background: rgba(255,255,255,0.1); }
+
+    .container {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 1rem;
+      align-items: stretch;
+      margin: 1rem 0 1.25rem;
+    }
+    .hero-panel, .need-help-panel {
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      background: var(--bg-card);
+      box-shadow: var(--shadow);
+    }
+    .hero-panel {
+      padding: clamp(1.25rem, 3vw, 2rem);
+      background:
+        linear-gradient(135deg, #FEF3C7 0%, #FDE68A 38%, #FEF9E7 100%);
+      border-color: var(--accent-gold);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-panel::after {
+      content: '';
+      position: absolute;
+      right: -4rem;
+      bottom: -5rem;
+      width: 14rem;
+      height: 14rem;
+      border: 2px solid rgba(49, 64, 89, 0.16);
+      border-radius: 50%;
+    }
+    .eyebrow {
+      margin: 0 0 0.55rem;
+      color: var(--accent-clay);
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hero h2 {
+      margin: 0;
+      max-width: 13ch;
+      color: var(--brand-primary-dark);
+      font-size: clamp(2.1rem, 7vw, 4.75rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+    }
+    .hero-copy {
+      max-width: 42rem;
+      margin: 1rem 0 0;
+      line-height: 1.65;
+      color: var(--text-primary);
+      position: relative;
+      z-index: 1;
+    }
+    .need-help-panel {
+      padding: 1.25rem;
+      display: grid;
+      gap: 0.9rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFF8E8 100%);
+    }
+    .need-help-panel h3 { margin: 0; color: var(--brand-primary-dark); }
+    .need-help-panel p { margin: 0; color: var(--text-secondary); line-height: 1.55; font-size: 0.92rem; }
+    .callout {
+      border-left: 4px solid var(--accent-clay);
+      padding: 0.8rem 0.9rem;
+      background: #FFF7ED;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .toolbar {
+      display: grid;
+      gap: 1rem;
+      padding: 1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.82);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    .search-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .search-wrap input, select {
+      width: 100%;
+      padding: 0.72rem 0.85rem;
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      background: white;
+      color: var(--text-primary);
+      font: inherit;
+    }
+    .search-wrap input:focus, select:focus {
+      outline: 3px solid rgba(245, 158, 11, 0.28);
+      border-color: var(--accent-gold);
+    }
+    .select-wrap {
+      display: grid;
+      gap: 0.25rem;
+      min-width: 160px;
+    }
+    .select-wrap label {
+      color: var(--text-secondary);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .quick-filters {
+      display: grid;
+      gap: 0.6rem;
+    }
+    .filter-label {
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .filter-chip {
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      background: var(--bg-card);
+      padding: 0.38rem 0.7rem;
+      cursor: pointer;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--brand-primary-dark);
+    }
+    .filter-chip:hover { border-color: var(--brand-primary-dark); }
+    .filter-chip.active {
+      background: var(--accent-gold);
+      border-color: var(--brand-primary-dark);
+      color: var(--text-primary);
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin: 1.25rem 0 0.75rem;
+    }
+    .count, .status {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    .status strong { color: var(--brand-primary-dark); }
+    .view-toggle {
+      display: flex;
+      overflow: hidden;
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      background: white;
+    }
+    .view-toggle button {
+      border: 0;
+      background: white;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 0.48rem 0.78rem;
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+    }
+    .view-toggle button.active {
+      background: var(--accent-gold);
+      color: var(--text-primary);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-height: 100%;
+      padding: 1.15rem;
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      background: var(--bg-card);
+      box-shadow: var(--shadow);
+    }
+    .card.past { opacity: 0.72; }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .date-badge {
+      min-width: 4.75rem;
+      border: 2px solid var(--brand-primary-dark);
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      background: var(--cream);
+      font-family: 'Chivo', sans-serif;
+      flex-shrink: 0;
+    }
+    .date-badge .month {
+      display: block;
+      padding: 0.22rem 0.35rem;
+      background: var(--brand-primary-dark);
+      color: white;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .date-badge .day {
+      display: block;
+      padding: 0.32rem 0.35rem 0.22rem;
+      color: var(--brand-primary-dark);
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .date-badge .year {
+      display: block;
+      padding: 0 0.35rem 0.36rem;
+      color: var(--text-secondary);
+      font-size: 0.7rem;
+    }
+    .card h3 {
+      margin: 0;
+      color: var(--brand-primary-dark);
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+    .host {
+      margin: 0.3rem 0 0;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+    .detail-grid {
+      display: grid;
+      gap: 0.38rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+    .detail-grid strong {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+    .description {
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      font-size: 0.92rem;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: auto;
+    }
+    .tag {
+      border-radius: 4px;
+      background: #EEF2FF;
+      color: var(--brand-primary-dark);
+      padding: 0.24rem 0.48rem;
+      font-size: 0.78rem;
+      line-height: 1.25;
+    }
+    .tag.audience { background: #FEF3C7; color: #92400E; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      padding-top: 0.1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      min-height: 2.45rem;
+      padding: 0.58rem 0.82rem;
+      border: 2px solid;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .btn-primary {
+      background: var(--accent-green);
+      border-color: var(--accent-green);
+      color: white;
+    }
+    .btn-secondary {
+      background: white;
+      border-color: var(--brand-primary-dark);
+      color: var(--brand-primary-dark);
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    .list-table-wrap { overflow-x: auto; }
+    .list-table {
+      width: 100%;
+      min-width: 850px;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 2px solid var(--border-color);
+      border-radius: 10px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .list-table th, .list-table td {
+      padding: 0.72rem 0.85rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+    .list-table th {
+      background: var(--brand-primary-dark);
+      color: white;
+      font-size: 0.82rem;
+    }
+    .list-table tbody tr:nth-child(even) { background: #F9FAFB; }
+    .empty, .loading, .error {
+      padding: 2.5rem 1rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+    .error { color: var(--accent-clay); }
+    .footer-note {
+      margin: 2rem 0 0;
+      padding: 1rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; }
+      .search-row { grid-template-columns: 1fr; }
+      .select-wrap { min-width: 0; }
+      .header-inner { align-items: flex-start; flex-direction: column; }
+      .source-link { white-space: normal; }
+    }
+    @media (max-width: 520px) {
+      .container { padding: 1rem; }
+      .hero-panel, .need-help-panel, .toolbar, .card { border-radius: 9px; }
+      .cards { grid-template-columns: 1fr; }
+      .card-top { flex-direction: column-reverse; }
+      .date-badge { width: 5rem; }
+      .meta-row { align-items: stretch; flex-direction: column; }
+      .view-toggle { width: 100%; }
+      .view-toggle button { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand" aria-label="Altagether">
+        <div class="brand-mark" aria-hidden="true">A</div>
+        <h1>Eaton Fire Wellness Table</h1>
+      </div>
+      <a class="source-link" href="https://docs.google.com/spreadsheets/d/1mkZBLqxakdYqwmgkSbR-VoojSpVcJR2MCCWqQEsBNPI/edit" target="_blank" rel="noopener noreferrer">View source spreadsheet</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="hero-panel">
+        <p class="eyebrow">Community care after the Eaton Fire</p>
+        <h2 id="pageTitle">Find support that fits today.</h2>
+        <p class="hero-copy">
+          Browse local and online mental health, wellness, recovery, and community care offerings compiled by area professionals and volunteers. Use the filters to find events by date, audience, type, location, or host.
+        </p>
+      </div>
+      <aside class="need-help-panel" aria-labelledby="urgentHelpTitle">
+        <h3 id="urgentHelpTitle">Need immediate help?</h3>
+        <p>This page is a community resource guide, not emergency care. If you or someone nearby is in immediate danger, call 911.</p>
+        <div class="callout">
+          For mental health crisis support in the U.S., call or text <strong>988</strong> to reach the Suicide & Crisis Lifeline.
+        </div>
+        <p>Event details can change. Please use the registration or flyer links to confirm before attending.</p>
+      </aside>
+    </section>
+
+    <section class="toolbar" aria-label="Search and filters">
+      <div class="search-row">
+        <div class="search-wrap">
+          <input type="search" id="searchInput" placeholder="Search events, hosts, descriptions, audiences..." aria-label="Search wellness events">
+        </div>
+        <div class="select-wrap">
+          <label for="dateFilter">When</label>
+          <select id="dateFilter">
+            <option value="upcoming">Upcoming</option>
+            <option value="today">Today</option>
+            <option value="week">Next 7 days</option>
+            <option value="month">Next 30 days</option>
+            <option value="all">All dates</option>
+          </select>
+        </div>
+        <div class="select-wrap">
+          <label for="locationFilter">Location</label>
+          <select id="locationFilter">
+            <option value="">All locations</option>
+          </select>
+        </div>
+      </div>
+      <div class="quick-filters">
+        <span class="filter-label">Event type</span>
+        <div class="filter-chips" id="typeChips"></div>
+      </div>
+      <div class="quick-filters">
+        <span class="filter-label">Who it is for</span>
+        <div class="filter-chips" id="audienceChips"></div>
+      </div>
+    </section>
+
+    <div class="meta-row">
+      <div>
+        <div class="count" id="resultCount">Loading resources...</div>
+        <div class="status" id="dataStatus"></div>
+      </div>
+      <div class="view-toggle" role="group" aria-label="View mode">
+        <button type="button" id="cardsView" class="active" aria-pressed="true">Cards</button>
+        <button type="button" id="listView" aria-pressed="false">List</button>
+      </div>
+    </div>
+
+    <div id="loading" class="loading">Loading live wellness events...</div>
+    <section id="cards" class="cards hidden" aria-live="polite"></section>
+    <div id="listWrap" class="list-table-wrap hidden">
+      <table class="list-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Type</th>
+            <th>Host</th>
+            <th>Location</th>
+            <th>Links</th>
+          </tr>
+        </thead>
+        <tbody id="listBody"></tbody>
+      </table>
+    </div>
+    <div id="empty" class="empty hidden">No resources match those filters. Try clearing a filter or broadening your search.</div>
+    <div id="error" class="error hidden"></div>
+
+    <p class="footer-note">
+      Information is pulled from the shared community spreadsheet when available. This V1 keeps the original source links visible so visitors can verify registration, location, and flyer details.
+    </p>
+  </main>
+
+  <script>
+    (function () {
+      const SHEET_ID = '1mkZBLqxakdYqwmgkSbR-VoojSpVcJR2MCCWqQEsBNPI';
+      const SHEET_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/edit';
+      const GVIZ_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?gid=0&tqx=responseHandler:';
+      const REQUIRED_COLUMNS = ['Event Name', 'Date', 'Time Start', 'Time End', 'Repeat Frequency', 'Event Type', 'Host Organization(s)', 'Location', 'Registration Link', 'Who Is It For?', 'Flyer Link(s)', 'Description'];
+      const FALLBACK_ROWS = [
+        {
+          'Event Name': 'Spiritual Support Groups',
+          'Date': '5/17/2026',
+          'Time Start': '2:00 PM',
+          'Time End': '4:00 PM',
+          'Repeat Frequency': 'Weekly',
+          'Event Type': 'Virtual / Online Event, Peer Support Group, Faith-based / Spiritual Gathering',
+          'Host Organization(s)': 'Epicentre Church and Medical Mission Adventures',
+          'Location': 'Location Varies, also available Virtual/Online',
+          'Registration Link': 'https://docs.google.com/forms/d/e/1FAIpQLSd0CPxxFoxwE_tvEjeJMxG2g5uSdrG76r5DGr334VGVVW1UOw/viewform',
+          'Who Is It For?': '"Young Adults (18, 19, 20, 21, 22, 23, 24 year old)", Adults (25-64), Seniors (65+)',
+          'Flyer Link(s)': 'https://drive.google.com/file/d/1Y4Wtb3m0uOsf_oVQBBHdODa6X2Xzzuo3/view?usp=sharing',
+          'Description': 'Weekly spiritual support groups for people impacted by the Eaton Fire, with in-person gatherings in Altadena and an online option.'
+        },
+        {
+          'Event Name': 'Free - Hope & Healing Supper Club',
+          'Date': '5/27/2026',
+          'Time Start': '5:00 PM',
+          'Time End': '7:00 PM',
+          'Repeat Frequency': 'None',
+          'Event Type': 'Community Meal / Gathering',
+          'Host Organization(s)': 'Pasadena Village and Project HOPE',
+          'Location': '236 W Mountain St, #113, Pasadena, CA 91103',
+          'Registration Link': 'https://pasadena.helpfulvillage.com/events/4597-hope--healing-supper-club',
+          'Who Is It For?': 'Adults (25-64), Seniors (65+), Men, Women, Racial / Ethnic Communities, Individuals with Disabilities, LGBTQ+ Community',
+          'Flyer Link(s)': 'https://drive.google.com/file/d/11m0hY9-yiBjCcmVWNU01aHbKry9Waeac/view?usp=sharing',
+          'Description': 'An in-person wellness series for adults 50+ focused on emotional resilience, community connection, self-care tools, and a complimentary supper.'
+        },
+        {
+          'Event Name': 'Journaling Group',
+          'Date': '6/9/2026',
+          'Time Start': '7:00 PM',
+          'Time End': '8:30 PM',
+          'Repeat Frequency': 'None',
+          'Event Type': 'Peer Support Group',
+          'Host Organization(s)': 'Medical Mission Adventures',
+          'Location': '540 West Woodbury Road, Altadena',
+          'Registration Link': 'https://docs.google.com/forms/d/e/1FAIpQLSd71eehLn_2df884aXE9qpx8H_iny6QN7gsAsH8yIn6gRO0kw/viewform',
+          'Who Is It For?': '"Young Adults (18, 19, 20, 21, 22, 23, 24 year old)", Adults (25-64), Seniors (65+)',
+          'Flyer Link(s)': 'https://drive.google.com/file/d/1SNHs-8doKwsHSFsGGR0bdapX4Da9PDoY/view?usp=sharing',
+          'Description': 'A hands-on journaling group introducing different techniques, with time to write and process in small groups.'
+        },
+        {
+          'Event Name': 'Free Movement + Meditative Art',
+          'Date': '6/17/2026',
+          'Time Start': '3:00 PM',
+          'Time End': '4:30 PM',
+          'Repeat Frequency': 'None',
+          'Event Type': 'Art / Creative Expression, Meditaton',
+          'Host Organization(s)': 'Dr. Clarissa Castillo-Ramsey Studios with support from Project HOPE',
+          'Location': '540 W Woodbury Rd, Altadena, CA 91001',
+          'Registration Link': 'https://www.eventbrite.com/e/free-movement-meditative-art-tickets-1990609218759',
+          'Who Is It For?': '"Young Adults (18, 19, 20, 21, 22, 23, 24 year old)", Adults (25-64), Seniors (65+)',
+          'Flyer Link(s)': 'https://drive.google.com/file/d/1jZ3GLfUqTysMbykV1onO5BWQP8u_rrGc/view?usp=sharing',
+          'Description': 'A gentle afternoon of movement, creative expression, nervous system support, and meditative art-making.'
+        },
+        {
+          'Event Name': 'Couple\'s Counseling Workshop Series',
+          'Date': '6/18/2026',
+          'Time Start': '6:00 PM',
+          'Time End': '8:00 PM',
+          'Repeat Frequency': 'None',
+          'Event Type': 'Training / Workshop',
+          'Host Organization(s)': 'Foothill Family',
+          'Location': 'Altadena Community Center',
+          'Registration Link': 'https://forms.cloud.microsoft/pages/responsepage.aspx?id=ekI0HDst7EC__w7WvBXGJL0fNhaiqcpGge2tOg2OkUhUNEdUTjExWEUyRVgwTkI5ODBCMk5OSUpKSC4u&route=shorturl',
+          'Who Is It For?': 'Couples, Young Adults, Adults (25-64), Seniors (65+), LGBTQ+ Community, Men, Women',
+          'Flyer Link(s)': 'https://drive.google.com/file/d/1Qzx7ilovjXnTuwylSsoEiSNjnscS8ld8/view?usp=sharing',
+          'Description': 'A supportive group counseling event for couples navigating the stress, communication struggles, and emotional aftereffects of the Eaton Fire.'
+        },
+        {
+          'Event Name': 'Free: Restore, Repair, Renew Retreat',
+          'Date': '6/25/2026',
+          'Time Start': '10:00 AM',
+          'Time End': '2:30 PM',
+          'Repeat Frequency': 'None',
+          'Event Type': 'Training / Workshop, Senior / Older Adult Focused, Retreat',
+          'Host Organization(s)': 'Epicentre Church - Pasadena, Lineage Performing Arts Center, Medical Mission Adventures, Pasadena Village, and Project HOPE',
+          'Location': 'La Casita del Arroyo: 177 S Arroyo Blvd, Pasadena CA 91105',
+          'Registration Link': 'https://docs.google.com/forms/d/e/1FAIpQLSfI4S_zT6EdyGd3ueI8uqQc7FJhDBWikYlAwS8bzFADwzmaEg/viewform',
+          'Who Is It For?': 'Adults (25-64), Seniors (65+), LGBTQ+ Community, Men, Women, Racial / Ethnic Communities, Individuals with Disabilities',
+          'Flyer Link(s)': 'https://drive.google.com/file/d/1RJ9T6dUqFrJs2s78wZLU7W7aKxz5-lu0/view?usp=sharing',
+          'Description': 'A free retreat for adults impacted by the Eaton Fire, designed to build community, wellness, restoration, and practical resilience tools.'
+        }
+      ];
+
+      let allEvents = [];
+      let filteredEvents = [];
+      let activeTypes = new Set();
+      let activeAudiences = new Set();
+      let viewMode = 'cards';
+      let liveLoaded = false;
+
+      const el = {
+        search: document.getElementById('searchInput'),
+        date: document.getElementById('dateFilter'),
+        location: document.getElementById('locationFilter'),
+        typeChips: document.getElementById('typeChips'),
+        audienceChips: document.getElementById('audienceChips'),
+        resultCount: document.getElementById('resultCount'),
+        dataStatus: document.getElementById('dataStatus'),
+        loading: document.getElementById('loading'),
+        cards: document.getElementById('cards'),
+        listWrap: document.getElementById('listWrap'),
+        listBody: document.getElementById('listBody'),
+        empty: document.getElementById('empty'),
+        error: document.getElementById('error'),
+        cardsView: document.getElementById('cardsView'),
+        listView: document.getElementById('listView')
+      };
+
+      function loadSheet() {
+        const callbackName = 'wellnessSheetLoaded_' + Date.now();
+        const script = document.createElement('script');
+        let settled = false;
+        const timeout = window.setTimeout(function () {
+          if (settled) return;
+          settled = true;
+          useFallback('Could not reach the live spreadsheet, so sample reference data is shown.');
+          cleanup();
+        }, 8000);
+
+        window[callbackName] = function (payload) {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timeout);
+          try {
+            const rows = parseGvizPayload(payload);
+            if (!rows.length) throw new Error('The sheet returned no rows.');
+            liveLoaded = true;
+            initialize(rows, 'Live spreadsheet loaded');
+          } catch (err) {
+            useFallback('Live spreadsheet returned an unexpected format, so sample reference data is shown.');
+          } finally {
+            cleanup();
+          }
+        };
+
+        script.onerror = function () {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timeout);
+          useFallback('Could not load the live spreadsheet, so sample reference data is shown.');
+          cleanup();
+        };
+
+        function cleanup() {
+          delete window[callbackName];
+          if (script.parentNode) script.parentNode.removeChild(script);
+        }
+
+        script.src = GVIZ_URL + callbackName + '&headers=1&cacheBust=' + Date.now();
+        document.body.appendChild(script);
+      }
+
+      function parseGvizPayload(payload) {
+        if (!payload || !payload.table || !payload.table.cols || !payload.table.rows) return [];
+        const headers = payload.table.cols.map(function (col, index) {
+          return (col.label || REQUIRED_COLUMNS[index] || '').trim();
+        });
+        return payload.table.rows.map(function (row) {
+          const item = {};
+          headers.forEach(function (header, index) {
+            const cell = row.c[index];
+            item[header] = formatCell(cell);
+          });
+          return item;
+        }).filter(function (item) {
+          return clean(item['Event Name']) || clean(item['Description']);
+        });
+      }
+
+      function formatCell(cell) {
+        if (!cell) return '';
+        if (cell.f != null) return String(cell.f).trim();
+        if (cell.v == null) return '';
+        return String(cell.v).trim();
+      }
+
+      function useFallback(message) {
+        liveLoaded = false;
+        initialize(FALLBACK_ROWS, message);
+      }
+
+      function initialize(rows, status) {
+        allEvents = rows.map(normalizeEvent).sort(sortByDate);
+        buildLocationSelect();
+        buildChips(el.typeChips, collectOptions('types'), activeTypes);
+        buildChips(el.audienceChips, collectOptions('audiences'), activeAudiences);
+        bindEvents();
+        el.loading.classList.add('hidden');
+        el.dataStatus.innerHTML = status ? '<strong>' + escapeHtml(status) + '.</strong> ' + (liveLoaded ? 'Details are sourced from the shared Google Sheet.' : 'Use source links to confirm details.') : '';
+        applyFilters();
+      }
+
+      function normalizeEvent(row) {
+        const event = Object.assign({}, row);
+        event.name = clean(row['Event Name']);
+        event.dateText = clean(row['Date']);
+        event.start = clean(row['Time Start']);
+        event.end = clean(row['Time End']);
+        event.repeat = clean(row['Repeat Frequency']);
+        event.types = normalizeTypes(parseMulti(clean(row['Event Type'])));
+        event.host = clean(row['Host Organization(s)']);
+        event.location = clean(row['Location']);
+        event.registrationText = clean(row['Registration Link']);
+        event.registrationUrls = extractUrls(event.registrationText);
+        event.audiences = normalizeAudiences(parseMulti(clean(row['Who Is It For?'])));
+        event.flyerUrls = extractUrls(clean(row['Flyer Link(s)']));
+        event.description = clean(row['Description']);
+        event.date = parseDate(event.dateText);
+        event.isVirtual = /virtual|online/i.test(event.location + ' ' + event.types.join(' '));
+        event.searchText = [
+          event.name,
+          event.host,
+          event.location,
+          event.registrationText,
+          event.description,
+          event.types.join(' '),
+          event.audiences.join(' ')
+        ].join(' ').toLowerCase();
+        return event;
+      }
+
+      function parseDate(value) {
+        if (!value) return null;
+        const match = String(value).match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+        if (match) return new Date(Number(match[3]), Number(match[1]) - 1, Number(match[2]));
+        const parsed = new Date(value);
+        return Number.isNaN(parsed.getTime()) ? null : parsed;
+      }
+
+      function sortByDate(a, b) {
+        if (!a.date && !b.date) return a.name.localeCompare(b.name);
+        if (!a.date) return 1;
+        if (!b.date) return -1;
+        return a.date - b.date || a.name.localeCompare(b.name);
+      }
+
+      function parseMulti(value) {
+        if (!value) return [];
+        const result = [];
+        let current = '';
+        let inQuotes = false;
+        const text = String(value).replace(/\s+/g, ' ').trim();
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+          if (char === '"') {
+            inQuotes = !inQuotes;
+          } else if (char === ',' && !inQuotes) {
+            if (current.trim()) result.push(current.trim());
+            current = '';
+          } else {
+            current += char;
+          }
+        }
+        if (current.trim()) result.push(current.trim());
+        return result.map(function (item) { return item.replace(/^"|"$/g, '').trim(); }).filter(Boolean);
+      }
+
+      function normalizeAudiences(items) {
+        return items.map(function (item) {
+          return item
+            .replace(/\s*\([^)]*\)/g, '')
+            .replace(/Young Adults.*/, 'Young Adults')
+            .replace(/Children \/ Child.*/, 'Children')
+            .replace(/Adolescents \/ Teens.*/, 'Teens')
+            .replace(/Pre-teens \/ Tweens.*/, 'Tweens')
+            .trim();
+        }).filter(Boolean);
+      }
+
+      function normalizeTypes(items) {
+        return items.map(function (item) {
+          return item.replace(/^Meditaton$/i, 'Meditation').trim();
+        }).filter(Boolean);
+      }
+
+      function buildLocationSelect() {
+        const buckets = ['In person', 'Virtual / Online'];
+        const hasTbd = allEvents.some(function (event) { return /tbd|announ|varies/i.test(event.location); });
+        if (hasTbd) buckets.push('Varies / To be announced');
+        buckets.forEach(function (value) {
+          const option = document.createElement('option');
+          option.value = value;
+          option.textContent = value;
+          el.location.appendChild(option);
+        });
+      }
+
+      function collectOptions(kind) {
+        const values = new Set();
+        allEvents.forEach(function (event) {
+          const source = kind === 'types' ? event.types : event.audiences;
+          source.forEach(function (value) { values.add(value); });
+        });
+        return Array.from(values).sort(function (a, b) { return a.localeCompare(b); }).slice(0, kind === 'types' ? 14 : 12);
+      }
+
+      function buildChips(container, options, activeSet) {
+        container.innerHTML = '';
+        options.forEach(function (option) {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'filter-chip';
+          button.textContent = option;
+          button.setAttribute('aria-pressed', 'false');
+          button.addEventListener('click', function () {
+            if (activeSet.has(option)) activeSet.delete(option);
+            else activeSet.add(option);
+            button.classList.toggle('active', activeSet.has(option));
+            button.setAttribute('aria-pressed', activeSet.has(option) ? 'true' : 'false');
+            applyFilters();
+          });
+          container.appendChild(button);
+        });
+      }
+
+      function bindEvents() {
+        el.search.addEventListener('input', applyFilters);
+        el.date.addEventListener('change', applyFilters);
+        el.location.addEventListener('change', applyFilters);
+        el.cardsView.addEventListener('click', function () { setView('cards'); });
+        el.listView.addEventListener('click', function () { setView('list'); });
+      }
+
+      function setView(mode) {
+        viewMode = mode;
+        el.cardsView.classList.toggle('active', mode === 'cards');
+        el.listView.classList.toggle('active', mode === 'list');
+        el.cardsView.setAttribute('aria-pressed', mode === 'cards' ? 'true' : 'false');
+        el.listView.setAttribute('aria-pressed', mode === 'list' ? 'true' : 'false');
+        render();
+      }
+
+      function applyFilters() {
+        const query = clean(el.search.value).toLowerCase();
+        const now = startOfDay(new Date());
+        filteredEvents = allEvents.filter(function (event) {
+          if (query && !event.searchText.includes(query)) return false;
+          if (!matchesDate(event, el.date.value, now)) return false;
+          if (!matchesLocation(event, el.location.value)) return false;
+          if (activeTypes.size && !event.types.some(function (type) { return activeTypes.has(type); })) return false;
+          if (activeAudiences.size && !event.audiences.some(function (audience) { return activeAudiences.has(audience); })) return false;
+          return true;
+        });
+        render();
+      }
+
+      function matchesDate(event, filter, now) {
+        if (filter === 'all') return true;
+        if (!event.date) return false;
+        const eventDay = startOfDay(event.date);
+        const days = Math.round((eventDay - now) / 86400000);
+        if (filter === 'today') return days === 0;
+        if (filter === 'week') return days >= 0 && days <= 7;
+        if (filter === 'month') return days >= 0 && days <= 30;
+        return days >= 0;
+      }
+
+      function matchesLocation(event, filter) {
+        if (!filter) return true;
+        if (filter === 'Virtual / Online') return event.isVirtual;
+        if (filter === 'Varies / To be announced') return /tbd|announ|varies/i.test(event.location);
+        return !event.isVirtual && !/tbd|announ|varies/i.test(event.location);
+      }
+
+      function render() {
+        el.resultCount.textContent = filteredEvents.length + ' resource' + (filteredEvents.length === 1 ? '' : 's') + ' found';
+        const hasResults = filteredEvents.length > 0;
+        el.empty.classList.toggle('hidden', hasResults);
+        el.cards.classList.toggle('hidden', !hasResults || viewMode !== 'cards');
+        el.listWrap.classList.toggle('hidden', !hasResults || viewMode !== 'list');
+        if (!hasResults) return;
+        if (viewMode === 'cards') renderCards();
+        else renderList();
+      }
+
+      function renderCards() {
+        el.cards.innerHTML = filteredEvents.map(function (event) {
+          const pastClass = event.date && startOfDay(event.date) < startOfDay(new Date()) ? ' past' : '';
+          return '<article class="card' + pastClass + '">' +
+            '<div class="card-top">' +
+              '<div><h3>' + escapeHtml(event.name || 'Untitled event') + '</h3>' +
+              (event.host ? '<p class="host">' + escapeHtml(event.host) + '</p>' : '') + '</div>' +
+              renderDateBadge(event) +
+            '</div>' +
+            '<div class="detail-grid">' +
+              renderDetail('When', formatWhen(event)) +
+              renderDetail('Where', event.location || 'Location not listed') +
+              (event.repeat && event.repeat.toLowerCase() !== 'none' ? renderDetail('Repeats', event.repeat) : '') +
+            '</div>' +
+            (event.description ? '<p class="description">' + escapeHtml(truncate(event.description, 310)) + '</p>' : '') +
+            '<div class="tags">' +
+              event.types.slice(0, 4).map(function (type) { return '<span class="tag">' + escapeHtml(type) + '</span>'; }).join('') +
+              event.audiences.slice(0, 5).map(function (audience) { return '<span class="tag audience">' + escapeHtml(audience) + '</span>'; }).join('') +
+            '</div>' +
+            '<div class="actions">' + renderActions(event) + '</div>' +
+          '</article>';
+        }).join('');
+      }
+
+      function renderList() {
+        el.listBody.innerHTML = filteredEvents.map(function (event) {
+          return '<tr>' +
+            '<td>' + escapeHtml(formatWhen(event)) + '</td>' +
+            '<td><strong>' + escapeHtml(event.name || 'Untitled event') + '</strong><br><span style="color:var(--text-secondary);">' + escapeHtml(truncate(event.description, 150)) + '</span></td>' +
+            '<td>' + escapeHtml(event.types.join(', ')) + '</td>' +
+            '<td>' + escapeHtml(event.host) + '</td>' +
+            '<td>' + escapeHtml(event.location) + '</td>' +
+            '<td>' + renderActions(event) + '</td>' +
+          '</tr>';
+        }).join('');
+      }
+
+      function renderDateBadge(event) {
+        if (!event.date) return '<div class="date-badge"><span class="month">Date</span><span class="day">TBD</span><span class="year">confirm</span></div>';
+        return '<div class="date-badge"><span class="month">' + monthName(event.date) + '</span><span class="day">' + event.date.getDate() + '</span><span class="year">' + event.date.getFullYear() + '</span></div>';
+      }
+
+      function renderDetail(label, value) {
+        if (!value) return '';
+        return '<div><strong>' + escapeHtml(label) + ':</strong> ' + escapeHtml(value) + '</div>';
+      }
+
+      function renderActions(event) {
+        const actions = [];
+        event.registrationUrls.slice(0, 2).forEach(function (url, index) {
+          actions.push('<a class="btn btn-primary" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' + (index === 0 ? 'Register' : 'More info') + '</a>');
+        });
+        if (!event.registrationUrls.length && event.registrationText) actions.push('<span class="btn btn-secondary">' + escapeHtml(truncate(event.registrationText, 32)) + '</span>');
+        event.flyerUrls.slice(0, 1).forEach(function (url) {
+          actions.push('<a class="btn btn-secondary" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">Flyer</a>');
+        });
+        actions.push('<a class="btn btn-secondary" href="' + SHEET_URL + '" target="_blank" rel="noopener noreferrer">Source</a>');
+        return actions.join('');
+      }
+
+      function formatWhen(event) {
+        const date = event.date ? event.date.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }) : event.dateText;
+        const time = [event.start, event.end].filter(Boolean).join(' - ');
+        return [date, time].filter(Boolean).join(' · ');
+      }
+
+      function extractUrls(value) {
+        const text = String(value || '').replace(/(https?:\/\/)/g, ' $1');
+        const matches = text.match(/https?:\/\/\S+/g) || [];
+        return matches.map(function (url) {
+          return url
+            .replace(/(Permissions|Registration|Register|Form:).*$/i, '')
+            .replace(/[),.;]+$/g, '')
+            .trim();
+        }).filter(Boolean);
+      }
+
+      function clean(value) {
+        return String(value || '').replace(/\s+/g, ' ').trim();
+      }
+
+      function startOfDay(date) {
+        return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+      }
+
+      function monthName(date) {
+        return date.toLocaleString(undefined, { month: 'short' });
+      }
+
+      function truncate(value, limit) {
+        const text = clean(value);
+        return text.length > limit ? text.slice(0, limit - 1).trim() + '...' : text;
+      }
+
+      function escapeHtml(value) {
+        const div = document.createElement('div');
+        div.textContent = value == null ? '' : String(value);
+        return div.innerHTML;
+      }
+
+      loadSheet();
+    })();
+  </script>
+</body>
+</html>
