@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eaton Fire Wellness Resources | Altagether</title>
+  <title>EFC Wellness Events</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-paper: #FDFBF7;
-      --bg-card: #FFFFFF;
-      --brand-primary-dark: #314059;
-      --text-primary: #1F2937;
-      --text-secondary: #4B5563;
-      --accent-gold: #F59E0B;
-      --accent-clay: #BC5838;
-      --accent-green: #283618;
-      --border-color: #E5E7EB;
-      --paper-warm: #FEF3C7;
-      --cream: #FFF8E8;
-      --shadow: 4px 4px 0 var(--border-color);
+      /* === COLOR PALETTE — change these to re-theme the whole page === */
+      --bg-paper: #FFE8E3;            /* page background */
+      --bg-card: #FFFFFF;            /* cards / boxes (kept white so text stays readable) */
+      --brand-primary-dark: #68867A; /* sage — headings, header bar, table headers, primary buttons */
+      --text-primary: #3A2D28;       /* main body text (dark; white would be invisible on the light bg) */
+      --text-secondary: #6E5F58;     /* muted body text */
+      --accent-gold: #FCA55C;        /* orange — highlights, active filters, "text background" accents */
+      --accent-clay: #C2603A;        /* darkened orange — small accent text that needs to stay legible */
+      --accent-green: #68867A;       /* sage — buttons & links */
+      --border-color: #FFC2B2;       /* coral — borders / box outlines */
+      --paper-warm: #FFC2B2;         /* coral */
+      --cream: #FFF3EE;              /* light peach — date-badge bodies, soft fills */
+      --shadow: 4px 4px 0 rgba(255, 194, 178, 0.85); /* coral drop shadow */
     }
 
     * { box-sizing: border-box; }
@@ -28,8 +29,8 @@
     body {
       font-family: 'Merriweather', serif;
       background:
-        radial-gradient(circle at 12% 8%, rgba(245, 158, 11, 0.18), transparent 28rem),
-        radial-gradient(circle at 90% 6%, rgba(188, 88, 56, 0.13), transparent 22rem),
+        radial-gradient(circle at 12% 8%, rgba(252, 165, 92, 0.22), transparent 28rem),
+        radial-gradient(circle at 90% 6%, rgba(255, 194, 178, 0.45), transparent 22rem),
         var(--bg-paper);
       color: var(--text-primary);
     }
@@ -69,7 +70,8 @@
       color: var(--accent-gold);
       font-family: 'Chivo', sans-serif;
       font-weight: 900;
-      letter-spacing: -0.08em;
+      font-size: 0.92rem;
+      letter-spacing: -0.04em;
     }
     .brand h1 {
       margin: 0;
@@ -108,8 +110,8 @@
     .hero-panel {
       padding: clamp(1.25rem, 3vw, 2rem);
       background:
-        linear-gradient(135deg, #FEF3C7 0%, #FDE68A 38%, #FEF9E7 100%);
-      border-color: var(--accent-gold);
+        linear-gradient(135deg, #FFE8E3 0%, #FFD7CC 55%, #FFC2B2 100%);
+      border-color: var(--paper-warm);
       position: relative;
       overflow: hidden;
     }
@@ -120,7 +122,7 @@
       bottom: -5rem;
       width: 14rem;
       height: 14rem;
-      border: 2px solid rgba(49, 64, 89, 0.16);
+      border: 2px solid rgba(104, 134, 122, 0.20);
       border-radius: 50%;
     }
     .eyebrow {
@@ -151,14 +153,15 @@
       padding: 1.25rem;
       display: grid;
       gap: 0.9rem;
-      background: linear-gradient(180deg, #FFFFFF 0%, #FFF8E8 100%);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFF3EE 100%);
     }
     .need-help-panel h3 { margin: 0; color: var(--brand-primary-dark); }
     .need-help-panel p { margin: 0; color: var(--text-secondary); line-height: 1.55; font-size: 0.92rem; }
     .callout {
       border-left: 4px solid var(--accent-clay);
       padding: 0.8rem 0.9rem;
-      background: #FFF7ED;
+      background: #FFF3EE;
+      color: var(--text-primary);
       font-size: 0.9rem;
       line-height: 1.5;
     }
@@ -188,7 +191,7 @@
       font: inherit;
     }
     .search-wrap input:focus, select:focus {
-      outline: 3px solid rgba(245, 158, 11, 0.28);
+      outline: 3px solid rgba(252, 165, 92, 0.32);
       border-color: var(--accent-gold);
     }
     .select-wrap {
@@ -362,13 +365,13 @@
     }
     .tag {
       border-radius: 4px;
-      background: #EEF2FF;
-      color: var(--brand-primary-dark);
+      background: #FFEDE7;
+      color: #5A3F33;
       padding: 0.24rem 0.48rem;
       font-size: 0.78rem;
       line-height: 1.25;
     }
-    .tag.audience { background: #FEF3C7; color: #92400E; }
+    .tag.audience { background: #FFE3CC; color: #8A4A1F; }
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -423,7 +426,7 @@
       color: white;
       font-size: 0.82rem;
     }
-    .list-table tbody tr:nth-child(even) { background: #F9FAFB; }
+    .list-table tbody tr:nth-child(even) { background: #FFF3EE; }
     .empty, .loading, .error {
       padding: 2.5rem 1rem;
       text-align: center;
@@ -462,9 +465,9 @@
 <body>
   <header class="header">
     <div class="header-inner">
-      <div class="brand" aria-label="Altagether">
-        <div class="brand-mark" aria-hidden="true">A</div>
-        <h1>Eaton Fire Wellness Table</h1>
+      <div class="brand" aria-label="EFC Wellness Events">
+        <div class="brand-mark" aria-hidden="true">EFC</div>
+        <h1>EFC Wellness Events</h1>
       </div>
       <a class="source-link" href="https://docs.google.com/spreadsheets/d/1mkZBLqxakdYqwmgkSbR-VoojSpVcJR2MCCWqQEsBNPI/edit" target="_blank" rel="noopener noreferrer">View source spreadsheet</a>
     </div>
@@ -483,7 +486,7 @@
         <h3 id="urgentHelpTitle">Need immediate help?</h3>
         <p>This page is a community resource guide, not emergency care. If you or someone nearby is in immediate danger, call 911.</p>
         <div class="callout">
-          For mental health crisis support in the U.S., call or text <strong>988</strong> to reach the Suicide & Crisis Lifeline.
+          For mental health crisis support in the U.S., call or text <strong>988</strong> to reach the Suicide &amp; Crisis Lifeline.
         </div>
         <p>Event details can change. Please use the registration or flyer links to confirm before attending.</p>
       </aside>
